@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Online - En Vivo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-wrapper">
+        
+        <div class="card radio-panel">
+    <div class="radio-header">
+        <h1 class="radio-name">Radio En Vivo</h1>
+        <p class="radio-tagline">Transmitiendo 24/7</p>
+    </div>
+    <div class="player-section">
+        <audio id="radioPlayer" controls crossorigin="anonymous">
+            <source src="https://streaming01.radiosenlinea.com.ar:9102/stream" type="audio/mpeg">
+            Tu navegador no soporta el reproductor.
+        </audio>
+        <div class="player-info">
+            <span class="status-dot"></span>
+            <span class="status-text">EN VIVO</span>
+        </div>
+    </div>
+</div>
+
+        <div class="card chat-section">
+            <h2 class="chat-title">Chat Global</h2>
+            <div class="chat-messages" id="chatMessages">
+                </div>
+            <div class="chat-input-container">
+                <input type="text" id="chatInput" placeholder="Escribe tu mensaje...">
+                <button id="sendButton">Enviar</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-database-compat.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>

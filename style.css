@@ -1,0 +1,141 @@
+/* 1. Reset General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. Cuerpo con Imagen de Fondo */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    /* Asegúrate de que el nombre del archivo coincida con el tuyo */
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("imagen.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* 3. Contenedor de los dos cuadrados */
+.main-wrapper {
+    display: flex;
+    flex-direction: row; /* Alineación horizontal */
+    justify-content: center;
+    align-items: stretch; /* Misma altura para ambos */
+    gap: 30px;
+    width: 100%;
+    max-width: 1100px;
+    flex-wrap: wrap; /* Se apila en móviles */
+}
+
+/* 4. Estilo de los Cuadrados (Cards) */
+.card {
+    background: rgba(15, 23, 42, 0.85); /* Fondo oscuro semitransparente */
+    backdrop-filter: blur(12px); /* Efecto cristal */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    flex: 1; /* Ambos cuadrados ocupan el mismo espacio */
+    min-width: 320px;
+    height: 550px; /* Altura simétrica */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+/* 5. Contenido de la Radio */
+.radio-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.radio-name {
+    font-size: 2.2rem;
+    color: #fff;
+    font-weight: 700;
+}
+
+.player-section {
+    margin: auto 0; /* Centra el reproductor verticalmente */
+    text-align: center;
+}
+
+audio {
+    width: 100%;
+    filter: invert(1); /* Hace que el reproductor sea blanco/gris */
+    margin-bottom: 15px;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ff4444;
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulse 2s infinite;
+}
+
+/* 6. Contenido del Chat */
+.chat-title {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.chat-messages {
+    flex-grow: 1; /* Ocupa el espacio disponible del cuadrado */
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.chat-input-container {
+    display: flex;
+    gap: 10px;
+}
+
+#chatInput {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.1);
+    color: white;
+    outline: none;
+}
+
+#sendButton {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+#sendButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+}
+
+/* Animaciones */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.5; }
+}
+
+/* Ajuste para celulares */
+@media (max-width: 768px) {
+    .main-wrapper { flex-direction: column; }
+    .card { min-width: 100%; height: auto; }
+}
